@@ -1,0 +1,51 @@
+.content-panel {
+  margin: auto;
+  max-width: 1024px;
+ &.body-container{
+  background-color: aliceblue;
+  box-shadow: #ccc 0px 0px 20px 4px;
+  padding:2em 2em;
+ }
+}
+
+header {
+  background: url('../../public/images/rotating_card.png') repeat-x;
+  color: #fff;
+  padding:1em 0;
+  .content-panel {
+    display: flex;
+
+    img.logo {
+      max-width: fit-content;
+      max-height: fit-content;
+      flex: 1 1;
+    }
+    h1 {
+      flex: 1 1;
+      min-width: 50%;
+    }
+    nav {
+      flex: 1 0;
+      min-width: 50%;
+    }
+  }
+}
+
+footer{
+  padding:2em;
+  background-color: #000;
+  color:#fff;
+  display:flex;
+  >*
+  {
+    flex:1;
+  }
+  .coordonnees{
+    display: flex;
+    flex-direction:column ;
+    a,a:visited,a:hover {
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+}
