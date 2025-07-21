@@ -6,11 +6,10 @@
       <ul>
         <li><a href="/">Accueil</a></li>
         <li>
-          <a href="#">L'Aéro-club</a>
-          <ul>
-            <li><a href="/inscription">S'inscrire</a></li>
-          </ul>
+          <a href="/aeroclub">L'Aéro-club</a>
         </li>
+        <li><a [routerLink]="'voler'">Voler/Baptêmes</a></li>
+        <li><a href="/inscription">S'inscrire</a></li>
       </ul>
     </nav>
   </div>
@@ -24,14 +23,18 @@
     <img alt="logo" [src]="'images/logo.png'" />
   </div>
   <div class="coordonnees">
-    <a class="address" href="https://www.google.com/maps/place/A%C3%A9ro+Club+Annonay/@45.2553184,4.8227403,17z/data=!4m6!3m5!1s0x47f53e6247f9df0d:0x60bd517d75d542f0!8m2!3d45.2556523!4d4.8230463!16s%2Fg%2F1tjkf48l?entry=ttu">
-      Aéroclub d'Annonay et de la Vallée du Rhône <br/>Aérodrome du Creux de la
+    <a
+      class="address"
+      href="https://www.google.com/maps/place/A%C3%A9ro+Club+Annonay/@45.2553184,4.8227403,17z/data=!4m6!3m5!1s0x47f53e6247f9df0d:0x60bd517d75d542f0!8m2!3d45.2556523!4d4.8230463!16s%2Fg%2F1tjkf48l?entry=ttu"
+    >
+      Aéroclub d'Annonay et de la Vallée du Rhône <br />Aérodrome du Creux de la
       Thine, 1692 Route RN7 Nord, 26140 Albon
     </a>
     <a href="tel:0475684454">04 75 68 44 54</a>
-    <a href="mailto:aeroclubdannonay.str@free.fr" [textContent]="'aeroclubdannonay.str@free.fr'"></a>
+    <a
+      href="mailto:aeroclubdannonay.str@free.fr"
+      [textContent]="'aeroclubdannonay.str@free.fr'"
+    ></a>
   </div>
-  <div>
-    (c) 2024 - Aéroclub d'Annonay
-  </div>
+  <div>(c) 2024 - Aéroclub d'Annonay</div>
 </footer>
