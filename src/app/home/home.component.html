@@ -1,77 +1,69 @@
-<div>
-  <swiper-container
-    class="slider"
-    navigation="true"
-    scrollbar="true"
-    virtual="true"
-    autoplay="true"
-    parallax="true"
-    center-slides="true"
-  >
-    <swiper-slide
-      ><div class="slide-container">
-        <img [src]="'images/caroussel/lflr.jpg'" /></div
-    ></swiper-slide>
-    <swiper-slide
-      ><div class="slide-container">
-        <img [src]="'images/caroussel/a22.JPG'" /></div
-    ></swiper-slide>
-    <swiper-slide
-      ><div class="slide-container">
-        <img [src]="'images/caroussel/bigf.jpg'" /></div
-    ></swiper-slide>
-    <swiper-slide
-      ><div class="slide-container">
-        <img [src]="'images/caroussel/coucher-soleil.jpg'" /></div
-    ></swiper-slide>
-  </swiper-container>
-</div>
-<hr class="separator" />
-<section>
-  <h2>
-    Bienvenue sur le site de l'aéro-club d'Annonay et de la Vallée du Rhône.
-  </h2>
-  <p>
-    Situé au Nord Drôme, à St Rambert d'Albon (LFLR), nous vous proposons des
-    vols découvertes mais aussi des vols d'initiation ainsi qu'une formation
-    complète pouvant vous amenez vers une licence LAPL/PPL.
-  </p>
-  <p>
+<div id="fb-root"></div>
+
+<div class="parallax">
+  <!-- <img [src]="'images/vue_top.jpg'" /> -->
+  <h2>Aéro-club d'Annonay et de la Vallée du Rhône</h2>
+  <p class="next" (click)="scrollToPresentation()">⌄</p>
+  <!-- <p>
     Avec une flotte constituée de 5 avions et 1 ULM, vous pourrez découvrir la
     région aux commandes de machines diverses allant de Jodel à trains
     classiques aux emblématiques Robin DR400 en passant par un ULM A22.
+  </p> -->
+</div>
+
+<section class="presentation" #presentation>
+  <p>
+    Situé au Nord Drôme, à St Rambert d'Albon (LFLR), nous vous proposons des
+    vols découvertes mais aussi des vols d'initiation ainsi qu'une formation
+    complète pouvant vous amener vers une licence LAPL/PPL.
   </p>
 </section>
 <section class="sub-menus">
   <div class="card">
-    <h4>Je découvre l'aviation ...</h4>
+    <h4><a [routerLink]="['/voler/decouvrir']">Je découvre l'aviation ...</a></h4>
   </div>
   <div class="card">
-    <h4>J'apprends à piloter</h4>
+    <h4><a [routerLink]="['/voler/apprendre']">J'apprends à piloter</a></h4>
   </div>
   <div class="card">
-    <h4>Je suis déjà pilote</h4>
+    <h4><a [routerLink]="['/inscription']">Je suis déjà pilote</a></h4>
   </div>
 </section>
 <section class="social-container">
   <article>
-    <img src="/img/cameraAero.jpeg?1716475976" style="width: 100%" />
+    Caméra
+    <img src="/images/cameraAero.jpeg?1716475976" style="width: 100%" />
   </article>
-  <article>
-    <iframe
-      src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FAeroclubDannonayEtDeLaValleeDuRhone&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;width=500&amp;height=500"
-      scrolling="yes"
-      style="border: none; overflow: hidden; width: 100%; height: 500px"
-      allowtransparency="true"
-      frameborder="0"
-    ></iframe>
-  </article>
-  <script>
+  <aside>
+    Actualités
+
+    <div
+      class="fb-page"
+      data-href="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone"
+      data-tabs="timeline"
+      data-width=""
+      data-height=""
+      data-small-header="false"
+      data-adapt-container-width="true"
+      data-hide-cover="false"
+      data-show-facepile="true"
+    >
+      <blockquote
+        cite="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone"
+        class="fb-xfbml-parse-ignore"
+      >
+        <a href="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone" target="_blank"
+          >Aéroclub d&#039;Annonay et de la Vallée du Rhône</a
+        >
+      </blockquote>
+    </div>
+  </aside>
+  <!-- <script>
     $('iframe').load(function () {
       $('iframe').css(
         ' -webkit-box-shadow',
         'inset 0 0 6px rgba(23,118,220,0.4)'
       );
     });
-  </script>
+  </script> -->
 </section>

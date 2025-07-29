@@ -1,51 +1,85 @@
 .content-panel {
-  margin: auto;
-  max-width: 1024px;
- &.body-container{
-  background-color: aliceblue;
-  box-shadow: #ccc 0px 0px 20px 4px;
-  padding:2em 2em;
- }
+  margin: 0 auto;
+  max-width: 1280px;
+  min-height: 100%;
+
+  &.body-container {
+    background-color: aliceblue;
+    box-shadow: #ccc 0px 20px 20px 4px;
+    padding: 0;
+  }
 }
 
 header {
-  background: url('../../public/images/rotating_card.png') repeat-x;
+  background: #1b4470;
   color: #fff;
-  padding:1em 0;
+  padding: 1em 0 0 0;
+  top: 0;
+  z-index: 2;
   .content-panel {
     display: flex;
+    gap: 1em;
 
     img.logo {
       max-width: fit-content;
       max-height: fit-content;
+      padding-bottom: 1em;
       flex: 1 1;
     }
-    h1 {
+    > div {
       flex: 1 1;
-      min-width: 50%;
-    }
-    nav {
-      flex: 1 0;
-      min-width: 50%;
+
+      h1 {
+        flex: 1 1;
+        min-width: 50%;
+      }
+      nav {
+        flex: 1 0;
+        min-width: 50%;
+        ul {
+          list-style: none;
+          display: flex;
+          gap: 1em;
+          margin: 0;
+          padding: 0;
+          a {
+            display: inline-block;
+            padding: 1em 1em 0.5em 1em;
+            color: #fff;
+            text-decoration: none;
+            &:visited {
+              text-decoration: none;
+            }
+            &:hover {
+              background-color: rgba($color: #fff, $alpha: 0.5);
+            }
+            &.active-link {
+              background-color: rgba($color: #fff, $alpha: 0.5);
+            }
+          }
+        }
+      }
     }
   }
 }
 
-footer{
-  padding:2em;
+footer {
+  padding: 2em;
   background-color: #000;
-  color:#fff;
-  display:flex;
-  >*
-  {
-    flex:1;
+  color: #fff;
+
+  display: flex;
+  > * {
+    flex: 1;
   }
-  .coordonnees{
+  .coordonnees {
     display: flex;
-    flex-direction:column ;
-    a,a:visited,a:hover {
+    flex-direction: column;
+    a,
+    a:visited,
+    a:hover {
       text-decoration: none;
-      color:#fff;
+      color: #fff;
     }
   }
 }

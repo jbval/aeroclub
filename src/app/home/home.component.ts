@@ -1,17 +1,27 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
-import { register } from 'swiper/element/bundle';
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  viewChild,
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss',
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [RouterLink],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  constructor() {
-    register();
-  }
+  @ViewChild('presentation', { static: true }) presentation!: ElementRef;
+  constructor() {}
+
   ngOnInit(): void {}
+
+  scrollToPresentation() {
+    this.presentation.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }

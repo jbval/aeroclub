@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-voler',
+  selector: 'app-bia',
   imports: [],
-  templateUrl: './voler.component.html',
-  styleUrl: './voler.component.scss',
+  templateUrl: './bia.component.html',
+  styleUrl: './bia.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VolerComponent { }
+export class BiaComponent { }

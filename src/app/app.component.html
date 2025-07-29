@@ -1,17 +1,36 @@
 <header>
   <div class="content-panel">
-    <img alt="logo" [src]="'images/logo.png'" />
-    <h1>Aeroclub d'Annonay</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Accueil</a></li>
-        <li>
-          <a href="/aeroclub">L'Aéro-club</a>
-        </li>
-        <li><a [routerLink]="'voler'">Voler/Baptêmes</a></li>
-        <li><a href="/inscription">S'inscrire</a></li>
-      </ul>
-    </nav>
+    <img class="logo" alt="logo" [src]="'images/logo.png'" />
+    <div>
+      <h1>Aeroclub d'Annonay</h1>
+      <nav>
+        <ul>
+          <li>
+            <a [routerLink]="'accueil'" [routerLinkActive]="'active-link'">Accueil</a>
+          </li>
+          <li>
+            <a [routerLink]="'aeroclub'" [routerLinkActive]="'active-link'"
+              >L'Aéro-club</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="'voler/decouvrir'" [routerLinkActive]="'active-link'"
+              >Decouvrir</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="'voler/apprendre'" [routerLinkActive]="'active-link'"
+              >Apprendre</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="'inscription'" [routerLinkActive]="'active-link'"
+              >S'inscrire</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 <div class="content-panel body-container">

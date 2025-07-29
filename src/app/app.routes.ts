@@ -3,6 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'accueil',
+  },
+  {
+    path: 'accueil',
     loadComponent: () =>
       import('./home/home.component').then((c) => c.HomeComponent),
   },
@@ -36,7 +41,38 @@ export const routes: Routes = [
   },
   {
     path: 'voler',
-    loadComponent: () =>
-      import('./voler/voler.component').then((c) => c.VolerComponent),
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'decouvrir',
+      },
+      {
+        path: 'decouvrir',
+        loadComponent: () =>
+          import('./voler/decouvrir/decouvrir.component').then(
+            (c) => c.DecouvrirComponent
+          ),
+      },
+      {
+        path: 'apprendre',
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./voler/apprendre/apprendre.component').then(
+                (c) => c.ApprendreComponent
+              ),
+          },
+          {
+            path: 'bia',
+            loadComponent: () =>
+              import('./voler/apprendre/bia/bia.component').then(
+                (c) => c.BiaComponent
+              ),
+          },
+        ],
+      },
+    ],
   },
 ];

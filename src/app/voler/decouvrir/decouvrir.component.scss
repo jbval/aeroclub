@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin: 0;
+  padding: 1em;
+}
+
+section.formules {
+  display: flex;
+  gap: 1em;
+  article {
+    flex: 1 1;
+  }
+}
