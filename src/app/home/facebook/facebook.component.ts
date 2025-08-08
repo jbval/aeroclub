@@ -8,12 +8,7 @@ declare var FB: any;
   styleUrl: './facebook.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { ngSkipHydration: 'true' },
 })
 export class FacebookComponent implements OnInit {
-  ngOnInit(): void {
-    if (FB != null && FB.XFBML != null) {
-      FB.XFBML.parse();
-    }
-  }
+  ngOnInit(): void {}
 }
