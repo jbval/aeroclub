@@ -20,7 +20,9 @@
 </section>
 <section class="sub-menus">
   <div class="card">
-    <h4><a [routerLink]="['/voler/decouvrir']">Je découvre l'aviation ...</a></h4>
+    <h4>
+      <a [routerLink]="['/voler/decouvrir']">Je découvre l'aviation ...</a>
+    </h4>
   </div>
   <div class="card">
     <h4><a [routerLink]="['/voler/apprendre']">J'apprends à piloter</a></h4>
@@ -32,31 +34,11 @@
 <section class="social-container">
   <article>
     Caméra
-    <img src="/images/cameraAero.jpeg?1716475976" style="width: 100%" />
+    <img src="images/cameraAero.jpeg?1716475976" style="width: 100%" />
   </article>
   <aside>
     Actualités
-
-    <div
-      class="fb-page"
-      data-href="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone"
-      data-tabs="timeline"
-      data-width="500"
-      data-height=""
-      data-small-header="true"
-      data-adapt-container-width="true"
-      data-hide-cover="false"
-      data-show-facepile="true"
-    >
-      <blockquote
-        cite="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone"
-        class="fb-xfbml-parse-ignore"
-      >
-        <a href="https://www.facebook.com/AeroclubDannonayEtDeLaValleeDuRhone" target="_blank"
-          >Aéroclub d&#039;Annonay et de la Vallée du Rhône</a
-        >
-      </blockquote>
-    </div>
+    <app-facebook ></app-facebook>
   </aside>
   <!-- <script>
     $('iframe').load(function () {
