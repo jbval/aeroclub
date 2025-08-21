@@ -47,8 +47,6 @@ header {
             padding: 1em 1em 0.5em 1em;
             color: #fff;
             text-decoration: none;
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
             &:visited {
               text-decoration: none;
             }
@@ -56,7 +54,8 @@ header {
               background-color: rgba($color: #fff, $alpha: 0.25);
             }
             &.active-link {
-              background-color: rgba($color: #fff, $alpha: 0.25);
+              border-bottom: 4px solid #fff;
+              font-weight: 700;
             }
           }
         }
