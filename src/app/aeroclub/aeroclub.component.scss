@@ -17,6 +17,9 @@ section {
     li {
       flex: 1 1;
       text-align: center;
+      img {
+        max-height: 70px;
+      }
     }
   }
 }
