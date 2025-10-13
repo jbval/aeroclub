@@ -18,6 +18,7 @@ header {
   z-index: 2;
   .content-panel {
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
 
     img.logo {
@@ -70,11 +71,13 @@ footer {
   color: #fff;
 
   display: flex;
+  flex-wrap: wrap;
   > * {
     flex: 1;
   }
   .coordonnees {
     display: flex;
+
     flex-direction: column;
     a,
     a:visited,

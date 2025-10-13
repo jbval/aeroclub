@@ -7,7 +7,12 @@ section {
   h2 {
     margin: 0;
   }
-
+  .plan {
+    padding-top: 2em;
+    gap:1em;
+    display: flex;
+    flex-wrap: wrap;
+  }
   ul.partners {
     list-style: none;
     display: flex;

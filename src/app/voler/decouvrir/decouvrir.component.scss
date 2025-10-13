@@ -6,8 +6,12 @@
 
 section.formules {
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
   article {
     flex: 1 1;
+    img{
+      width: 100%;
+    }
   }
 }
