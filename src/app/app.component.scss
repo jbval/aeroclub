@@ -66,7 +66,7 @@ header {
 }
 
 footer {
-  padding: 2em;
+  padding: 2em 0 0 0;
   background-color: #000;
   color: #fff;
 
@@ -77,13 +77,26 @@ footer {
   }
   .coordonnees {
     display: flex;
-
     flex-direction: column;
     a,
     a:visited,
     a:hover {
       text-decoration: none;
       color: #fff;
+    }
+    img {
+      height: 32px;
+      padding-right: 0.5em;
+    }
+    .tel,.address{
+      display: flex;
+      align-items: center;
+    }
+  }
+  .logo-container {
+    text-align: center;
+    img {
+      max-height: 200px;
     }
   }
 }

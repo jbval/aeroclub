@@ -21,3 +21,28 @@ h2 {
     background-size: cover;
   }
 }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #1b4470;
+  border-radius: 5px;
+  padding: 0.25em;
+  background: #1b4470;
+  color: #fff;
+  text-decoration: none;
+  &.cta-left::before {
+    content: '⟶';
+    display: inline-block;
+    padding-right: 0.25em;
+  }
+  &.cta-right::after {
+    content: '⟶';
+    display: inline-block;
+    padding-left: 0.25em;
+  }
+
+  &:hover {
+    background: #000f25;
+  }
+}
