@@ -1,3 +1,38 @@
 :host {
   display: block;
 }
+
+section {
+  padding: 1em;
+}
+
+.avions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  article {
+    flex: 1 1;
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    background: #fff;
+    padding: 1em;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > * {
+      flex: 1 1;
+    }
+    h3 {
+      flex: 0 1;
+    }
+    img {
+      width: 100%;
+    }
+    .legend {
+      text-align: justify;
+      font-style: italic;
+    }
+  }
+}

@@ -4,13 +4,19 @@
   padding: 1em;
 }
 article {
-
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
-  padding:1em;
-
-  img{
+  padding: 1em;
+  > * {
+    flex: 1 1;
+  }
+  div{
+    min-width: 600px;
+  }
+  img {
     max-height: fit-content;
     max-width: 25%;
+    min-width: 250px;
   }
 }

@@ -16,6 +16,7 @@ section {
   ul.partners {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     background: #1b4470;
     padding: 1em;
     margin: 0;
