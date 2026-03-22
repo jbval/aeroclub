@@ -9,62 +9,6 @@
   text-align: center;
   position: relative;
 }
-// .slider{
-//   // background-color: #fff;
-//   height:350px;
-//   .slide-container{
-//     text-align: center;
-//     position: relative;
-//     height:100%;
-
-//     &::after{
-//       display:block;
-//       content:'';
-//       position:absolute;
-//       top:0;
-//       left:0;
-//       width:100%;
-//       height:100%;
-//       background: linear-gradient(90deg, rgba(240,248,255,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, rgba(240,248,255,1) 100%);
-//       z-index: 100;
-
-//     }
-//     img{
-//       max-height: 340px;
-//       max-width: 100%;
-//       height:100%;
-
-//     }
-//   }
-// }
-// .swiper-container{
-//   height:350px;
-// }
-//  swiper-container {
-//       width: 100%;
-//       height: 100%;
-//     }
-
-//     swiper-slide {
-//       text-align: center;
-//       font-size: 18px;
-//       background: #444;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//     }
-
-//     swiper-slide img {
-//       display: block;
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//     }
-
-//     swiper-container {
-//       margin-left: auto;
-//       margin-right: auto;
-//     }
 
 .parallax {
   background-image: url('/images/f-bt2.webp');
@@ -87,7 +31,8 @@
   p {
     font-size: 2em;
   }
-  h1,h2 {
+  h1,
+  h2 {
     font-size: 3em;
   }
   .next {
@@ -136,13 +81,13 @@ p.presentation {
     flex: 1 1;
 
     h4 {
-      padding: 1em ;
+      padding: 1em;
       border-radius: 1em;
       text-align: center;
       color: #fff;
       background: #1b4470;
 
-      &:hover{
+      &:hover {
         background: #000f25;
       }
     }
