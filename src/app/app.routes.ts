@@ -10,6 +10,12 @@ export const routes: Routes = [
     path: 'accueil',
     loadComponent: () =>
       import('./home/home.component').then((c) => c.HomeComponent),
+
+    data: {
+      description:
+        "Accueil de l'aéroclub d'annonay. Venez voler dans la vallée du rhône à travers des vpms de découverte ou encore apprendre à piloter. ",
+      title: 'Accueil',
+    },
   },
   {
     path: 'aeroclub',
@@ -19,16 +25,21 @@ export const routes: Routes = [
         path: '',
         loadComponent: () =>
           import('./aeroclub/aeroclub.component').then(
-            (c) => c.AeroclubComponent
+            (c) => c.AeroclubComponent,
           ),
+        data: {
+          title: 'Aeroclub',
+        },
       },
       {
-        title: 'Avions',
         path: 'avions',
         loadComponent: () =>
           import('./aeroclub/avions/avions.component').then(
-            (c) => c.AvionsComponent
+            (c) => c.AvionsComponent,
           ),
+        data: {
+          title: 'Avions',
+        },
       },
     ],
   },
@@ -36,8 +47,11 @@ export const routes: Routes = [
     path: 'inscription',
     loadComponent: () =>
       import('./inscription/inscription.component').then(
-        (c) => c.InscriptionComponent
+        (c) => c.InscriptionComponent,
       ),
+    data: {
+      title: 'Inscription',
+    },
   },
   {
     path: 'voler',
@@ -51,8 +65,11 @@ export const routes: Routes = [
         path: 'decouvrir',
         loadComponent: () =>
           import('./voler/decouvrir/decouvrir.component').then(
-            (c) => c.DecouvrirComponent
+            (c) => c.DecouvrirComponent,
           ),
+        data: {
+          title: 'Baptêmes',
+        },
       },
       {
         path: 'apprendre',
@@ -61,15 +78,21 @@ export const routes: Routes = [
             path: '',
             loadComponent: () =>
               import('./voler/apprendre/apprendre.component').then(
-                (c) => c.ApprendreComponent
+                (c) => c.ApprendreComponent,
               ),
+            data: {
+              title: 'Apprendre',
+            },
           },
           {
             path: 'bia',
             loadComponent: () =>
               import('./voler/apprendre/bia/bia.component').then(
-                (c) => c.BiaComponent
+                (c) => c.BiaComponent,
               ),
+            data: {
+              title: 'BIA',
+            },
           },
         ],
       },
