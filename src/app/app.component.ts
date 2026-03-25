@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import {
   ActivatedRoute,
@@ -18,12 +18,12 @@ import { filter, map, Observable, switchMap, tap } from 'rxjs';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private titleService: Title,
-    private meta: Meta,
-  ) {}
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private titleService = inject(Title);
+  private meta = inject(Meta);
+
+  constructor() {}
   ngOnInit(): void {
     this.router.events
       .pipe(
