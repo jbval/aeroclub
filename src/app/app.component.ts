@@ -3,7 +3,6 @@ import {
   Component,
   OnInit,
   inject,
-  isDevMode,
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import {
@@ -23,7 +22,6 @@ import {
   from,
   interval,
   map,
-  Observable,
   switchMap,
   tap,
 } from 'rxjs';
@@ -60,7 +58,7 @@ export class AppComponent implements OnInit {
       )
       .subscribe();
 
-    if (!isDevMode()) {
+    if (this.swUpdate.isEnabled) {
       const appIsStable$ = this.appRef.isStable.pipe(
         first((isStable) => isStable === true),
       );
