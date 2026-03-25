@@ -1,4 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  ApplicationRef,
+  Component,
+  OnInit,
+  inject,
+  isDevMode,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import {
   ActivatedRoute,
@@ -9,7 +15,18 @@ import {
   RouterLinkActive,
   RouterOutlet,
 } from '@angular/router';
-import { filter, map, Observable, switchMap, tap } from 'rxjs';
+import { SwUpdate } from '@angular/service-worker';
+import {
+  concat,
+  filter,
+  first,
+  from,
+  interval,
+  map,
+  Observable,
+  switchMap,
+  tap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +35,12 @@ import { filter, map, Observable, switchMap, tap } from 'rxjs';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  private router = inject(Router);
-  private route = inject(ActivatedRoute);
-  private titleService = inject(Title);
-  private meta = inject(Meta);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+  private readonly titleService = inject(Title);
+  private readonly meta = inject(Meta);
+  private readonly swUpdate = inject(SwUpdate);
+  private readonly appRef = inject(ApplicationRef);
 
   constructor() {}
   ngOnInit(): void {
@@ -40,11 +59,41 @@ export class AppComponent implements OnInit {
         tap((routeData) => this.updateTitleAndMeta(routeData)),
       )
       .subscribe();
+
+    if (!isDevMode()) {
+      const appIsStable$ = this.appRef.isStable.pipe(
+        first((isStable) => isStable === true),
+      );
+      const everySixHours$ = interval(6 * 60 * 60 * 1000);
+      const everySixHoursOnceAppIsStable$ = concat(
+        appIsStable$,
+        everySixHours$,
+      );
+
+      everySixHoursOnceAppIsStable$
+        .pipe(switchMap(() => from(this.swUpdate.checkForUpdate())))
+        .subscribe();
+
+      this.swUpdate.versionUpdates
+        .pipe(
+          tap((ev) => {
+            switch (ev.type) {
+              case 'NO_NEW_VERSION_DETECTED':
+              case 'VERSION_DETECTED':
+              case 'VERSION_INSTALLATION_FAILED':
+                break;
+              case 'VERSION_READY':
+                this.swUpdate.activateUpdate();
+                document.location.reload();
+            }
+          }),
+        )
+        .subscribe();
+    }
   }
   updateTitleAndMeta(data: Data): void {
     const description = data['description'];
     const title = data['title'];
-
 
     if (description) {
       this.meta.updateTag({
@@ -55,6 +104,5 @@ export class AppComponent implements OnInit {
     if (title) {
       this.titleService.setTitle(`Aeroclub d'Annonay - ${title}`);
     }
-
   }
 }
