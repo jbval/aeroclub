@@ -13,6 +13,10 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width:100%;
+    img{
+      width: 100%;
+    }
   }
   ul.partners {
     list-style: none;

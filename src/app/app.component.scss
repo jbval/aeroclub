@@ -13,13 +13,14 @@
 header {
   background: #1b4470;
   color: #fff;
-  padding: 1em 0 0 0;
+  padding: 1em 1em 0 1em;
   top: 0;
   z-index: 2;
   .content-panel {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+    justify-content: center;
 
     img.logo {
       max-width: fit-content;
@@ -29,6 +30,7 @@ header {
     }
     > div {
       flex: 1 1;
+      min-width: 200px;
 
       h1 {
         flex: 1 1;
@@ -89,7 +91,8 @@ footer {
       height: 32px;
       padding-right: 0.5em;
     }
-    .tel,.address{
+    .tel,
+    .address {
       display: flex;
       align-items: center;
     }

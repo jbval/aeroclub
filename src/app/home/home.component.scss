@@ -67,6 +67,7 @@ p.presentation {
   gap: 1em;
   > * {
     flex: 1 1;
+    min-width: 200px;
   }
   aside {
     div {
