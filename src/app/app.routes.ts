@@ -98,4 +98,24 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'legal',
+    loadComponent: () =>
+      import('./legal/legal.component').then(
+        (c) => c.LegalComponent,
+      ),
+    data: {
+      title: 'Page introuvable',
+    },
+  },
+  {
+    path: 'notfound',
+    loadComponent: () =>
+      import('./not-found/not-found.component').then(
+        (c) => c.NotFoundComponent,
+      ),
+    data: {
+      title: 'Page introuvable',
+    },
+  },
 ];

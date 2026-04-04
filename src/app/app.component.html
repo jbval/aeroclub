@@ -58,13 +58,18 @@
     <a class="tel" href="tel:0475684454"
       ><img [src]="'images/tel.svg'" alt="Téléphone" />04 75 68 44 54</a
     >
-    <a
-      href="mailto:aeroclubdannonay.str@free.fr"
-      [textContent]="'aeroclubdannonay.str@free.fr'"
-    ></a>
+    <a class="email" href="mailto:aeroclubdannonay.str@free.fr">
+      <img
+        [src]="'images/email.svg'"
+        alt="email"
+      />aeroclubdannonay.str@free.fr</a
+    >
   </div>
-  <div>
-    ©Aéro-club d'Annonay
+  <div class="mentions">
+    © Aéro-club d'Annonay
+    <p>
+      <a [routerLink]="'legal'"> Mentions légales </a>
+    </p>
     <p>
       <a [href]="'https://www.ffa-aero.fr/'" target="_blank">
         <img [src]="'images/logo-ffa.png'" alt="Logo FFA" />

@@ -81,20 +81,27 @@ footer {
   .coordonnees {
     display: flex;
     flex-direction: column;
-    a,
-    a:visited,
-    a:hover {
-      text-decoration: none;
-      color: #fff;
-    }
+    gap: 1em;
+
     img {
       height: 32px;
       padding-right: 0.5em;
     }
     .tel,
-    .address {
+    .address,
+    .email {
       display: flex;
       align-items: center;
+    }
+  }
+
+  .mentions,
+  .coordonnees {
+    a,
+    a:visited,
+    a:hover {
+      text-decoration: none;
+      color: #fff;
     }
   }
   .logo-container {
