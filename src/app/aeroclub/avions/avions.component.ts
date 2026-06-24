@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  OnInit,
-} from '@angular/core';
-import { register } from 'swiper/element';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-avions',
@@ -13,11 +7,7 @@ import { register } from 'swiper/element';
   styleUrl: './avions.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AvionsComponent implements OnInit {
-  ngOnInit(): void {
-    register();
-    console.log('avions component');
-  }
+  ngOnInit(): void {}
 }
